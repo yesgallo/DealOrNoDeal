@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal or No Deal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1><img src="{{ url_for('static', filename='images/title.png') }}" alt="Deal or No Deal Title"></h1>
+        </header>
+        <main>
+            <div id="cases-grid">
+                {% for case in range(1, 27) %}
+                    <button class="case" id="case{{ case }}" onclick="selectPlayerCase('{{ case }}')">
+                        <img src="{{ url_for('static', filename='images/case_' + case|string + '.png') }}" alt="Case {{ case }}">
+                    </button>
+                {% endfor %}
+            </div>
+            <div id="values">
+                <h2>Values</h2>
+                <ul id="values-list">
+                    {% for value in values %}
+                        <li class="value-item" data-value="{{ value }}"> ${{ value }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="buttons">
+                <button onclick="makeBankerOffer()">Oferta</button>
+                <button onclick="deal()">Trato Hecho</button>
+                <button onclick="noDeal()">No Hay Trato</button>
+            </div>
+            <audio id="bg-music" src="{{ url_for('static', filename='music/background.mp3') }}" autoplay loop></audio>
+        </main>
+        <footer>
+            <form method="post" action="{{ url_for('game') }}">
+                <input type="hidden" name="game_state" id="game-state-input" value="{{ game_state|tojson }}">
+                <button type="submit">Guardar partida</button>
+            </form>            
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

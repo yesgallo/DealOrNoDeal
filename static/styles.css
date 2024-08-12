@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#title {
+    width: 100%;
+    max-width: 600px;
+}
+
+#suitcases {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.suitcase {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.suitcase img {
+    width: 100%;
+    height: auto;
+}
+
+#values-table {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#values-list {
+    list-style: none;
+    padding: 0;
+}
+
+#values-list li {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #f00;
+    color: #fff;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header h1 img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+#cases-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.case {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+}
+
+.case.selected {
+    border-color: #ff0; /* Yellow border for selected case */
+    background-color: #ff0; /* Yellow background for selected case */
+}
+
+.value-item {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+.value-item.removed {
+    text-decoration: line-through; /* Strike-through for removed values */
+    color: #ccc;
+}
+
+button.case img {
+    width: 100px;
+    height: auto;
+}
+
+#values {
+    margin-top: 20px;
+}
+
+#values ul {
+    list-style: none;
+    padding: 0;
+}
+
+#values li {
+    font-size: 18px;
+}
+
+#buttons {
+    margin-top: 20px;
+}
+
+/* Estilos para los mensajes flash */
+.flashes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.flashes .success {
+    background-color: #28a745; /* Verde para éxito */
+}
+
+.flashes .error {
+    background-color: #dc3545; /* Rojo para error */
+}
+
+.flashes .warning {
+    background-color: #ffc107; /* Amarillo para advertencias */
+}
+
+footer {
+    margin-top: 20px;
+}
+
